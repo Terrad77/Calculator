@@ -7,11 +7,11 @@ def click(button_text):
             result = eval(enter.get())  # Выполняется расчет выражения - enter.get() считывает введённое
             # пользователем выражение в виде строки, Функция eval() интерпретирует строку как Python-код
             enter.delete(0, tk.END) # Очищается поле ввода с диапазоном 0: Указывает на начало строки (первая позиция
-            # текста в поле Entry), tk.END: Указывает на конец строки (последний символ в поле).
+            # текста в поле Entry, tk.END: Указывает на конец строки (последний символ в поле).
             enter.insert(tk.END, str(result)) # Вставляется результат
         except Exception as e:
             enter.delete(0, tk.END)
-            enter.insert(tk.END, "Exception: {e}") # Обработка ошибок, если выражение некорректно
+            enter.insert(tk.END, f"Exception: {str(e)}") # Обработка ошибок, если выражение некорректно,  f-строка (форматированная строка)
     elif button_text == "C":
         enter.delete(0, tk.END)
     else:
